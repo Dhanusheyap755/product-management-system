@@ -1,5 +1,12 @@
 # CoreStock - Professional Product Management System (MERN Stack)
 
+[![Live Demo](https://img.shields.io/badge/Live%20Website-Visit%20Site-4f46e5?style=for-the-badge&logo=vercel&logoColor=white)](https://product-management-system-tan-gamma.vercel.app)
+[![Backend API](https://img.shields.io/badge/Live%20Backend%20API-Render-brightgreen?style=for-the-badge&logo=render&logoColor=white)](https://product-management-system-tfks.onrender.com/api/health)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Dhanusheyap755/product-management-system)
+
+> 🌐 **Live Deployed URL:** [https://product-management-system-tan-gamma.vercel.app](https://product-management-system-tan-gamma.vercel.app)  
+> ⚙️ **Live Backend API (Render):** [https://product-management-system-tfks.onrender.com](https://product-management-system-tfks.onrender.com)
+
 A modern, responsive, SaaS-grade **Product Management System** built with the complete **MERN Stack** (React.js + Vite, Node.js + Express.js, MongoDB + Mongoose, and Lucide React icons). Features a clean SaaS aesthetic with navy blue (`#0f172a`) and indigo (`#4f46e5`) accents, complete Indian Rupee (`₹`) currency localization, and real-time Date & Time auditing.
 
 ---
