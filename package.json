@@ -1,0 +1,24 @@
+{
+  "name": "mern-product-management-system",
+  "version": "1.0.0",
+  "description": "Professional Product Management System built with MERN Stack (React, Vite, Node, Express, MongoDB, Mongoose)",
+  "scripts": {
+    "server": "npm --prefix backend run dev",
+    "client": "npm --prefix frontend run dev",
+    "seed": "npm --prefix backend run seed",
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "build:client": "npm --prefix frontend run build"
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "vite",
+    "mongodb",
+    "mongoose",
+    "express",
+    "inventory-management",
+    "product-management"
+  ],
+  "author": "Antigravity Assistant",
+  "license": "MIT"
+}
