@@ -1,5 +1,14 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const dns = require('dns');
+
+// Fix for Windows DNS querySrv ECONNREFUSED with MongoDB Atlas
+try {
+  dns.setServers(['8.8.8.8', '8.8.4.4']);
+} catch (e) {
+  console.warn('[DNS Warning]: Could not set custom DNS servers', e.message);
+}
+
 const Product = require('../models/Product');
 
 dotenv.config();

@@ -217,6 +217,13 @@ const createProduct = async (req, res, next) => {
 
     const savedProduct = await product.save();
 
+    console.log(`\n🟢 [MONGODB INSERT] New Product Added:`);
+    console.log(`   ID:       ${savedProduct._id}`);
+    console.log(`   Name:     ${savedProduct.name}`);
+    console.log(`   Price:    ₹${savedProduct.price}`);
+    console.log(`   Quantity: ${savedProduct.quantity} units (${savedProduct.status})`);
+    console.log(`   Time:     ${new Date().toLocaleTimeString()}\n`);
+
     res.status(201).json({
       success: true,
       message: 'Product created successfully',
@@ -256,6 +263,13 @@ const updateProduct = async (req, res, next) => {
 
     const updatedProduct = await product.save();
 
+    console.log(`\n🟡 [MONGODB UPDATE] Product Details Updated:`);
+    console.log(`   ID:       ${updatedProduct._id}`);
+    console.log(`   Name:     ${updatedProduct.name}`);
+    console.log(`   Price:    ₹${updatedProduct.price}`);
+    console.log(`   Quantity: ${updatedProduct.quantity} units (${updatedProduct.status})`);
+    console.log(`   Time:     ${new Date().toLocaleTimeString()}\n`);
+
     res.status(200).json({
       success: true,
       message: 'Product updated successfully',
@@ -281,6 +295,11 @@ const deleteProduct = async (req, res, next) => {
     }
 
     await Product.findByIdAndDelete(req.params.id);
+
+    console.log(`\n🔴 [MONGODB DELETE] Product Removed:`);
+    console.log(`   ID:       ${product._id}`);
+    console.log(`   Name:     ${product.name}`);
+    console.log(`   Time:     ${new Date().toLocaleTimeString()}\n`);
 
     res.status(200).json({
       success: true,
