@@ -1,7 +1,17 @@
 // API Client Service for Product Management
-// In production on Vercel, VITE_API_URL points to the Render backend URL (e.g. https://your-backend.onrender.com)
-// In local development, it defaults to relative paths using Vite reverse proxy
-const BACKEND_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, '') : '';
+// Dynamically resolves Render backend URL in production (GitHub Pages / Vercel),
+// and uses local Vite reverse proxy when developing on localhost.
+const getBackendUrl = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL.replace(/\/$/, '');
+  }
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    return 'https://product-management-system-tfks.onrender.com';
+  }
+  return '';
+};
+
+const BACKEND_URL = getBackendUrl();
 const API_BASE = `${BACKEND_URL}/api/products`;
 
 export const productService = {
