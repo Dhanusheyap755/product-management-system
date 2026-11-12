@@ -10,7 +10,13 @@ try {
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+    let uri = process.env.MONGODB_URI;
+    if (!uri) {
+      uri = 'mongodb+srv://testuser:dhanudsd@cluster0.pimkevk.mongodb.net/product_management_db?retryWrites=true&w=majority';
+    }
+
+    const conn = await mongoose.connect(uri, {
+      dbName: 'product_management_db',
       serverSelectionTimeoutMS: 10000,
     });
     console.log(`[MongoDB Connected]: ${conn.connection.host}/${conn.connection.name}`);
